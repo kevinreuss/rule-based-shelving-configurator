@@ -2,7 +2,8 @@
  * Internal Quoting Tool — Frontend Logic (Prototype)
  */
 
-const API_URL = window.API_URL || "http://localhost:8000";
+const API_URL =
+  window.API_URL || "https://rule-based-shelving-configurator.onrender.com";
 
 const form = document.getElementById("quoteForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -62,7 +63,7 @@ function renderResults(data) {
         <td class="num">${item.quantity}</td>
         <td class="num">${money(item.unit_price)}</td>
         <td class="num">${money(item.line_total)}</td>
-      </tr>`
+      </tr>`,
     )
     .join("");
 
