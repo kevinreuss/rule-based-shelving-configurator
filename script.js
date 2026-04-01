@@ -2,7 +2,7 @@
  * Internal Quoting Tool — Frontend Logic (Prototype)
  */
 
-const API_URL = "http://localhost:8000";
+const API_URL = window.API_URL || "http://localhost:8000";
 
 const form = document.getElementById("quoteForm");
 const submitBtn = document.getElementById("submitBtn");
