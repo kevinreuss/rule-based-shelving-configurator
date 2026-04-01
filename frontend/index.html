@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internal Quoting Tool – Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <img src="logo.png" alt="Company Logo" class="logo" />
+        <div>
+          <h1>Internal Quoting Tool - Prototype</h1>
+          <p class="subtitle">
+            Simplified demo for section breakdown, SKU mapping, and quote
+            generation
+          </p>
+        </div>
+      </header>
+
+      <!-- Form -->
+      <section class="card">
+        <form id="quoteForm">
+          <div class="form-grid">
+            <label class="field">
+              <span>Total Length (meters)</span>
+              <select id="totalLength">
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="8">8</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Height (meters)</span>
+              <select id="height">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Depth (meters)</span>
+              <select id="depth">
+                <option value="0.5" selected>0.5</option>
+                <option value="1.0">1.0</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Frame Color</span>
+              <select id="frameColor">
+                <option>Black</option>
+                <option>White</option>
+              </select>
+            </label>
+
+            <label class="field checkbox">
+              <input type="checkbox" id="addBackPanel" checked />
+              <span>Add Back Panels</span>
+            </label>
+
+            <label class="field checkbox">
+              <input type="checkbox" id="addEndCaps" checked />
+              <span>Add End Caps</span>
+            </label>
+          </div>
+
+          <button type="submit" id="submitBtn">Generate Quote</button>
+        </form>
+      </section>
+
+      <!-- Loading -->
+      <div id="loading" class="loading hidden">Generating quote…</div>
+
+      <!-- Error -->
+      <div id="error" class="error hidden"></div>
+
+      <!-- Results -->
+      <section id="results" class="card results hidden">
+        <h2>Quote Summary</h2>
+
+        <div id="configSummary" class="config-summary"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Component</th>
+                <th class="num">Qty</th>
+                <th class="num">Unit Price</th>
+                <th class="num">Line Total</th>
+              </tr>
+            </thead>
+            <tbody id="quoteBody"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" class="total-label">Grand Total</td>
+                <td class="num" id="grandTotal"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
