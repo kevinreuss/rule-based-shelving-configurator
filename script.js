@@ -2,8 +2,7 @@
  * Internal Quoting Tool — Frontend Logic (Prototype)
  */
 
-const API_URL =
-  window.API_URL || "https://rule-based-shelving-configurator.onrender.com";
+const API_URL = "https://rule-based-shelving-configurator.onrender.com";
 
 const form = document.getElementById("quoteForm");
 const submitBtn = document.getElementById("submitBtn");
